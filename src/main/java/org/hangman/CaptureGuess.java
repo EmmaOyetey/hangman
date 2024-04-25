@@ -6,12 +6,15 @@ import java.util.Scanner;
 public class CaptureGuess {
 
     private ArrayList<String> guesses = new ArrayList<>();
+    private String enteredLetter;
 
     public CaptureGuess() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Make your guess:");
         String thisGuess = scanner.nextLine();
+        enteredLetter = thisGuess;
         addGuess(thisGuess);
+
     }
 
     public void addGuess(String guess) {
@@ -26,8 +29,12 @@ public class CaptureGuess {
         return guesses;
     }
 
-    public static void main(String[] args) {
+    public String getEnteredLetter() {
+        return enteredLetter;
+    }
 
+    public static void main(String[] args) {
+        CaptureGuess captureGuess = new CaptureGuess();
         System.out.println("Guess count: " + captureGuess.getGuessCount());
         System.out.println("Your guesses so far: " + captureGuess.getGuesses());
     }

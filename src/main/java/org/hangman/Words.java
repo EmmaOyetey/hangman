@@ -8,7 +8,7 @@ public class Words {
 
     private static Random random = new Random();
 
-    public static String generateWord() {
+    public static String generateRandomWord() {
         int randomIndex = random.nextInt(words.size());
         return words.get(randomIndex);
     }

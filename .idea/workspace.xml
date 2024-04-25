@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="ammended spelling syntax">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/UserCommandRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/UserInteraction.java" afterDir="false" />
+    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="CaptureGuess class added to capture 1 guess and add to an array of guesses">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/Words.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/Words.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.CaptureGuess.executor": "Run",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -42,7 +46,7 @@
     "onboarding.tips.debug.path": "C:/Users/emmaf/nology/Projects/Hangman/src/main/java/org/example/Main.java"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="CaptureGuess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hangman.CaptureGuess" />
       <module name="Hangman" />
@@ -56,8 +60,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hangman.Main" />
+      <module name="Hangman" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hangman.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.CaptureGuess" />
       </list>
     </recent_temporary>
@@ -87,13 +105,22 @@
       <option name="project" value="LOCAL" />
       <updated>1714049507023</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="CaptureGuess class added to capture 1 guess and add to an array of guesses">
+      <option name="closed" value="true" />
+      <created>1714057716919</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714057716919</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created Words class with generateWord instance method and using java util Random to select one at random." />
     <MESSAGE value="ammended spelling syntax" />
-    <option name="LAST_COMMIT_MESSAGE" value="ammended spelling syntax" />
+    <MESSAGE value="CaptureGuess class added to capture 1 guess and add to an array of guesses" />
+    <option name="LAST_COMMIT_MESSAGE" value="CaptureGuess class added to capture 1 guess and add to an array of guesses" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
