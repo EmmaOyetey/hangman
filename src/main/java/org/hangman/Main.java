@@ -16,10 +16,11 @@ public class Main {
         ArrayList<Integer> positions = new ArrayList<>();
         ArrayList<String> guesses = new ArrayList<>();
         boolean letterMatch = false;
-        captureGuess = new CaptureGuess();
+
 
         for (int attempt = 1; attempt <= HandleGuess.getMaxGuesses(); attempt++) {
             CommandLine.displayGuessPrompt(attempt, guesses);
+            captureGuess = new CaptureGuess();
             String enteredLetter = captureGuess.getGuesses().get(captureGuess.getGuessCount() - 1);
             letterMatch = HandleGuess.checkGuess(randomWord, enteredLetter, positions);
 

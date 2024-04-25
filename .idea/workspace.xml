@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="started to move output to new class CommanLine">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="failing to call guesses array correctly. few adjustments made to address. currently still not working" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714065993858</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="failing to call guesses array correctly. few adjustments made to address. currently still not working">
+      <option name="closed" value="true" />
+      <created>1714086262305</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714086262306</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -156,7 +157,8 @@
     <MESSAGE value="added logic to loop through the random word and capture all instances where the entered letter matches a letter (char) in the randomword" />
     <MESSAGE value="moved logic for handling guess into its own class handleGuess. adjusted main accordingly." />
     <MESSAGE value="started to move output to new class CommanLine" />
-    <option name="LAST_COMMIT_MESSAGE" value="started to move output to new class CommanLine" />
+    <MESSAGE value="failing to call guesses array correctly. few adjustments made to address. currently still not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="failing to call guesses array correctly. few adjustments made to address. currently still not working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
