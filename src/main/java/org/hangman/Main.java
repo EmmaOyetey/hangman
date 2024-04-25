@@ -2,6 +2,7 @@ package org.hangman;
 
 import org.hangman.Words;
 import org.hangman.CaptureGuess;
+import org.hangman.HandleGuess;
 
 import java.util.ArrayList;
 
@@ -13,20 +14,16 @@ public class Main {
 
         CaptureGuess captureGuess = new CaptureGuess();
 
+
         String enteredLetter = captureGuess.getGuesses().get(0);
+        ArrayList<Integer> positions = new ArrayList<>();
+
+        boolean letterMatch = HandleGuess.checkGuess(randomWord, enteredLetter, positions);
 
         System.out.println("Guess count: " + captureGuess.getGuessCount());
         System.out.println("Your guesses so far: " + enteredLetter);
 
-        boolean letterMatch = false;
-        ArrayList<Integer> positions = new ArrayList<>();
 
-        for (int i = 0; i < randomWord.length(); i++) {
-            if (randomWord.charAt(i) == enteredLetter.charAt(0)) {
-                letterMatch = true;
-                positions.add(i);
-            }
-        }
 
         if (letterMatch) {
             System.out.println("Hooray! The entered letter matches a letter in the random word.");
