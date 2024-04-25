@@ -2,16 +2,31 @@ package org.hangman;
 
 import java.util.ArrayList;
 
-public class CommandLine {public static void displayRandomWord(String randomWord) {
+public class CommandLine {
+
+    public static void displayRandomWord(String randomWord) {
     System.out.println("Random word: " + randomWord);
 }
 
-    public static void displayGuessCount(int guessCount) {
-        System.out.println("Guess count: " + guessCount);
-    }
+//    public static void displayGuessCount(int guessCount) {
+//        System.out.println("Guess count: " + guessCount);
+//    }
 
-    public static void displayGuessesSoFar(String enteredLetter) {
-        System.out.println("Your guesses so far: " + enteredLetter);
+     public static void displayGuessPrompt(int attempt, ArrayList<String> guesses) {
+         System.out.println("Attempt #" + attempt);
+         System.out.println("Previous guesses" + guesses);
+         System.out.println("Make your guess:");
+     }
+
+    public static void displayPreviousGuesses(ArrayList<String> previousGuesses) {
+        System.out.print("Your guesses so far: ");
+        for (int i = 0; i < previousGuesses.size(); i++) {
+            System.out.print(previousGuesses.get(i));
+            if (i < previousGuesses.size() - 1) {
+                System.out.print(", "); // Add comma and space if not the last guess
+            }
+        }
+        System.out.println(); // Print newline after all guesses are displayed
     }
 
     public static void displayLetterMatch(ArrayList<Integer> positions) {

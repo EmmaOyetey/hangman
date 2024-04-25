@@ -18,6 +18,7 @@ public class HandleGuess {
             if (randomWord.charAt(i) == enteredLetter.charAt(0)) {
                 letterMatch = true;
                 positions.add(i);
+
             }
         }
         return letterMatch;
