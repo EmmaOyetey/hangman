@@ -18,11 +18,11 @@ public class CommandLine {
          System.out.println("Make your guess:");
      }
 
-    public static void displayPreviousGuesses(ArrayList<String> previousGuesses) {
+    public static void displayPreviousGuesses(ArrayList<String> guesses) {
         System.out.print("Your guesses so far: ");
-        for (int i = 0; i < previousGuesses.size(); i++) {
-            System.out.print(previousGuesses.get(i));
-            if (i < previousGuesses.size() - 1) {
+        for (int i = 0; i < guesses.size(); i++) {
+            System.out.print(guesses.get(i));
+            if (i < guesses.size() - 1) {
                 System.out.print(", "); // Add comma and space if not the last guess
             }
         }

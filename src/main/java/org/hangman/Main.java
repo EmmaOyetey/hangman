@@ -12,20 +12,19 @@ public class Main {
         String randomWord = Words.generateRandomWord();
         CommandLine.displayRandomWord(randomWord); // to remove
 
-        CaptureGuess captureGuess;
         ArrayList<Integer> positions = new ArrayList<>();
         ArrayList<String> guesses = new ArrayList<>();
-        boolean letterMatch = false;
+        boolean letterIsInWord = false;
 
 
         for (int attempt = 1; attempt <= HandleGuess.getMaxGuesses(); attempt++) {
             CommandLine.displayGuessPrompt(attempt, guesses);
-            captureGuess = new CaptureGuess();
-            String enteredLetter = captureGuess.getGuesses().get(captureGuess.getGuessCount() - 1);
-            letterMatch = HandleGuess.checkGuess(randomWord, enteredLetter, positions);
-
-            if (letterMatch) {
-                CommandLine.displayLetterMatch(positions);
+            CaptureGuess captureGuess = new CaptureGuess(guesses);
+            String enteredLetter = guesses.get(guesses.size() - 1);
+            letterIsInWord = HandleGuess.checkGuess(randomWord, enteredLetter, positions);
+            CommandLine.displayLetterMatch(positions);
+            if (letterIsInWord) {
+                CommandLine.displayPreviousGuesses(guesses);
             } else {
                 CommandLine.displayNoLetterMatch();
             }
@@ -36,7 +35,7 @@ public class Main {
             }
         }
 
-        if (!letterMatch) {
+        if (!letterIsInWord) {
             System.out.println("You've reached the maximum number of guesses. The word was: " + randomWord);
         }
     }

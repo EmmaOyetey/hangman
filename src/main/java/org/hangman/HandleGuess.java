@@ -11,16 +11,16 @@ public class HandleGuess {
     }
 
     public static boolean checkGuess(String randomWord, String enteredLetter, ArrayList<Integer> positions) {
-        boolean letterMatch = false;
+        boolean letterIsInWord = false;
         positions.clear(); // Clear positions list before populating it
 
         for (int i = 0; i < randomWord.length(); i++) {
             if (randomWord.charAt(i) == enteredLetter.charAt(0)) {
-                letterMatch = true;
+                letterIsInWord = true;
                 positions.add(i);
 
             }
         }
-        return letterMatch;
+        return letterIsInWord;
     }
 }

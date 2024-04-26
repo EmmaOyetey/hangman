@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public class CaptureGuess {
 
-    private ArrayList<String> guesses = new ArrayList<>();
+    private ArrayList<String> guesses;
  //   private String enteredLetter;
 
-    public CaptureGuess() {
+    public CaptureGuess(ArrayList<String> guesses) {
+        this.guesses = guesses;
         Scanner scanner = new Scanner(System.in);
         String thisGuess = scanner.nextLine();
 //        enteredLetter = thisGuess;
@@ -18,6 +19,9 @@ public class CaptureGuess {
 
     public int getGuessCount() {
         return guesses.size();
+    }
+    public ArrayList<String> setGuesses() {
+        return guesses;
     }
 
     public ArrayList<String> getGuesses() {
