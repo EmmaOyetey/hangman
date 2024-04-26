@@ -13,6 +13,19 @@ public class Words {
         return words.get(randomIndex);
     }
 
+    public static int getWordLength(String word) {
+        return word.length();
+    }
+
+    public static String[] generateGuessedLettersArray(String word) {
+        int length = getWordLength(word);
+        String[] guessedLettersArray = new String[length];
+        for (int i = 0; i < length; i++) {
+            guessedLettersArray [i] = "_";
+        }
+        return guessedLettersArray ;
+    }
+
     private static ArrayList<String> words = new ArrayList<>();
 
     static {

@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="failing to call guesses array correctly. few adjustments made to address. currently still not working">
+    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="guesses Array now working. moved as instance method to main object rather than an instance of captureguess method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/Words.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/Words.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714086474335</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="guesses Array now working. moved as instance method to main object rather than an instance of captureguess method">
+      <option name="closed" value="true" />
+      <created>1714118577210</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714118577212</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,7 +180,8 @@
     <MESSAGE value="moved logic for handling guess into its own class handleGuess. adjusted main accordingly." />
     <MESSAGE value="started to move output to new class CommanLine" />
     <MESSAGE value="failing to call guesses array correctly. few adjustments made to address. currently still not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="failing to call guesses array correctly. few adjustments made to address. currently still not working" />
+    <MESSAGE value="guesses Array now working. moved as instance method to main object rather than an instance of captureguess method" />
+    <option name="LAST_COMMIT_MESSAGE" value="guesses Array now working. moved as instance method to main object rather than an instance of captureguess method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
