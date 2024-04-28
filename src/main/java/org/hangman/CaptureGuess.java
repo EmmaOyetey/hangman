@@ -1,32 +1,25 @@
 package org.hangman;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CaptureGuess {
 
-    private ArrayList<String> guesses;
+    private char guess;
 
-
-
-    public CaptureGuess(ArrayList<String> guesses) {
-        this.guesses = guesses;
+    public CaptureGuess() {
         Scanner scanner = new Scanner(System.in);
-        String thisGuess = scanner.nextLine();
-          guesses.add(thisGuess);
+        String input = scanner.next(); // Read the whole line and trim any leading/trailing whitespace
+
+        if (input.length() != 1 || !Character.isLetter(input.charAt(0))) {
+            System.out.println("Oops! Please enter a single letter.");
+            new CaptureGuess(); // Recreate the CaptureGuess object if the input is invalid
+            return;
+        }
+
+        this.guess = input.charAt(0);
     }
 
-    public int getGuessCount() {
-        return guesses.size();
+    public char getGuess() {
+        return guess;
     }
-    public ArrayList<String> setGuesses() {
-        return guesses;
-    }
-
-    public ArrayList<String> getGuesses() {
-        return guesses;
-    }
-
 }
-
-

@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="removed position array and replaced with correctLetter array which displays example&quot;_,_,A,_ &quot;">
+    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="commiting changes before refactoring arrays to be instance variables of handle guess class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/Words.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/Words.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +39,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.CaptureGuess.executor": "Run",
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -175,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714138053342</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="commiting changes before refactoring arrays to be instance variables of handle guess class">
+      <option name="closed" value="true" />
+      <created>1714306362112</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714306362112</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -188,7 +199,8 @@
     <MESSAGE value="failing to call guesses array correctly. few adjustments made to address. currently still not working" />
     <MESSAGE value="guesses Array now working. moved as instance method to main object rather than an instance of captureguess method" />
     <MESSAGE value="removed position array and replaced with correctLetter array which displays example&quot;_,_,A,_ &quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed position array and replaced with correctLetter array which displays example&quot;_,_,A,_ &quot;" />
+    <MESSAGE value="commiting changes before refactoring arrays to be instance variables of handle guess class" />
+    <option name="LAST_COMMIT_MESSAGE" value="commiting changes before refactoring arrays to be instance variables of handle guess class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -198,7 +210,18 @@
           <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.hangman.HandleGuess" memberName="incorrectGuesses" />
+        <PinnedItemInfo parentTag="org.hangman.HandleGuess" memberName="incorrectAttempts" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

@@ -18,13 +18,6 @@ public class Words {
         return word.length();
     }
 
-    public static String[] generateGuessedLettersArray(String word) {
-        int length = getWordLength(word);
-        String[] guessedLettersArray = new String[length];
-        Arrays.fill(guessedLettersArray, "_");
-        return guessedLettersArray ;
-    }
-
     private static final ArrayList<String> words = new ArrayList<>();
 
     static {

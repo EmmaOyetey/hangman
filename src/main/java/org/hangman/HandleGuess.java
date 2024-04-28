@@ -1,25 +1,75 @@
 package org.hangman;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 
 public class HandleGuess {
 
-    private static int maxGuesses = 10;
+    private static final int MAX_GUESSES = 10;
+    private char [] correctLetters;
+    private ArrayList<Character> incorrectGuesses;
+    private int incorrectAttempts = 0;
 
-    public static int getMaxGuesses() {
-        return maxGuesses;
+    public HandleGuess(String randomWord) {
+        int wordLength = Words.getWordLength(randomWord);
+        correctLetters = new char[wordLength];
+        Arrays.fill(correctLetters, '_');
+        incorrectGuesses = new ArrayList<>();
     }
 
-    public static boolean checkGuess(String randomWord, String enteredLetter, String[] correctLetters, ArrayList<String> incorrectGuesses) {
-        boolean letterIsInWord = false;
+    public  int getMaxGuesses() {
+        return MAX_GUESSES;
+    }
+
+    public char[] getCorrectLetters() {
+        return correctLetters;
+    }
+    public void setCorrectLetters(char[] correctLetters) {
+        this.correctLetters = correctLetters;
+    }
+
+    public ArrayList<Character> getIncorrectGuesses() {
+        return incorrectGuesses;
+    }
+    public void setIncorrectGuesses(ArrayList<Character> incorrectGuesses) {
+        this.incorrectGuesses = incorrectGuesses;
+    }
+
+//    public int getIncorrectAttempts() {
+//        return incorrectAttempts;
+//    }
+
+  //  public void setIncorrectAttempts(int incorrectAttempts) {
+   //     this.incorrectAttempts = incorrectAttempts;
+ //   }
+
+    public boolean checkGuess(String randomWord, char enteredLetter){
+        boolean isLetterIsInWord = false;
         for (int i = 0; i < randomWord.length(); i++) {
-            if (randomWord.charAt(i) == enteredLetter.charAt(0)) {
-                letterIsInWord = true;
+            if (randomWord.charAt(i) == enteredLetter) {
+                isLetterIsInWord= true;
                 correctLetters[i] = enteredLetter;
-            } else {
-                incorrectGuesses[i] = enteredLetter;
             }
         }
-        return letterIsInWord;
+
+        if (!isLetterIsInWord) {
+            incorrectGuesses.add(enteredLetter);
+            incorrectAttempts ++;
+            }
+        return isLetterIsInWord;
+    }
+
+    public boolean checkIsWinner() {
+        for (char letter : correctLetters) {
+            if (letter == '_') {
+                return false;
+            }
+        }
+        return true; // No underscores found, all letters have been guessed
+    }
+
+    public boolean checkIsLoser() {
+        return incorrectGuesses.size() == 5;
     }
 }
+
