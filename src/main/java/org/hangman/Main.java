@@ -27,8 +27,9 @@ public class Main {
             String enteredLetter = guesses.get(guesses.size() - 1);
             letterIsInWord = HandleGuess.checkGuess(randomWord, enteredLetter, correctLetters, incorrectGuesses);
         //    CommandLine.displayLetterMatch(positions);
+            CommandLine.displayCorrectLetters(correctLetters);
             System.out.println(guesses);
-            System.out.println(Arrays.toString(correctLetters));
+         //   System.out.println(Arrays.toString(correctLetters));
         //    System.out.println(incorrectGuesses);
 
             if (letterIsInWord) {

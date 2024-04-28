@@ -1,12 +1,13 @@
 package org.hangman;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Random;
 
 public class Words {
 
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     public static String generateRandomWord() {
         int randomIndex = random.nextInt(words.size());
@@ -20,13 +21,11 @@ public class Words {
     public static String[] generateGuessedLettersArray(String word) {
         int length = getWordLength(word);
         String[] guessedLettersArray = new String[length];
-        for (int i = 0; i < length; i++) {
-            guessedLettersArray [i] = "_";
-        }
+        Arrays.fill(guessedLettersArray, "_");
         return guessedLettersArray ;
     }
 
-    private static ArrayList<String> words = new ArrayList<>();
+    private static final ArrayList<String> words = new ArrayList<>();
 
     static {
 

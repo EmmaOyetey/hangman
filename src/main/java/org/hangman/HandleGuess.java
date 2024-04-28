@@ -1,7 +1,6 @@
 package org.hangman;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class HandleGuess {
 
@@ -17,12 +16,8 @@ public class HandleGuess {
             if (randomWord.charAt(i) == enteredLetter.charAt(0)) {
                 letterIsInWord = true;
                 correctLetters[i] = enteredLetter;
-                System.out.println(Arrays.toString(correctLetters));
-                System.out.println(incorrectGuesses);
             } else {
-                incorrectGuesses.add(enteredLetter);
-                System.out.println(Arrays.toString(correctLetters));
-                System.out.println(incorrectGuesses);
+                incorrectGuesses[i] = enteredLetter;
             }
         }
         return letterIsInWord;

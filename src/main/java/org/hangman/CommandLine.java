@@ -1,6 +1,7 @@
 package org.hangman;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CommandLine {
 
@@ -11,6 +12,9 @@ public class CommandLine {
 //    public static void displayGuessCount(int guessCount) {
 //        System.out.println("Guess count: " + guessCount);
 //    }
+    public static void displayCorrectLetters(String[] correctedLetters ) {
+        System.out.println(Arrays.toString(correctedLetters));
+    }
 
      public static void displayGuessPrompt(int attempt, ArrayList<String> guesses) {
          System.out.println("Attempt #" + attempt);
