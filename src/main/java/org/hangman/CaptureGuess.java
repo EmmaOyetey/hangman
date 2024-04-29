@@ -10,7 +10,7 @@ public class CaptureGuess {
         Scanner scanner = new Scanner(System.in);
         String input;
         do {
-            input = scanner.next(); // Read the whole line and trim any leading/trailing whitespace
+            input = scanner.next();
 
             if (input.length() != 1 || !Character.isLetter(input.charAt(0))) {
                 System.out.println("Oops! Please enter a single letter.");

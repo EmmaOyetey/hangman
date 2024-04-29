@@ -36,7 +36,9 @@ public class CommandLine {
         System.out.println(); // Print newline after all guesses are displayed
     }
 
-
+    public static void displayGuessNotUnique(char enteredLetter){
+        System.out.println("You already guessed " + enteredLetter);
+    }
 
     public static void displayNoLetterMatch(char enteredLetter) {
         System.out.println("Sorry, " + enteredLetter + " is not in the word.");

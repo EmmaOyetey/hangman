@@ -36,20 +36,42 @@ public class HandleGuess {
     }
 
     public boolean checkGuess(String randomWord, char enteredLetter){
-        boolean isLetterIsInWord = false;
+        boolean isLetterInWord = false;
+        boolean isUniqueGuess = checkIsUnique(enteredLetter);
+
+        if (!isUniqueGuess) {
+            return false; // If the guess is not unique, return false without further processing
+        }
+
         for (int i = 0; i < randomWord.length(); i++) {
             if (randomWord.charAt(i) == enteredLetter) {
-                isLetterIsInWord= true;
+                isLetterInWord = true;
                 correctLetters[i] = enteredLetter;
             }
         }
 
-        if (!isLetterIsInWord) {
+        if (!isLetterInWord) {
             incorrectGuesses.add(enteredLetter);
-            incorrectAttempts ++;
-            }
-        return isLetterIsInWord;
+            incorrectAttempts++;
+        }
+
+        return isLetterInWord;
     }
+
+
+    public boolean checkIsUnique(char enteredLetter){
+        for (char letter : incorrectGuesses) {
+            if (letter == enteredLetter) {
+                return false; // Letter is already guessed incorrectly
+            }
+        }
+        for (char letter : correctLetters) {
+            if (letter == enteredLetter) {
+                return false; // Letter is already guessed correctly
+            }
+        }
+        return true; // Letter is not guessed yet
+    };
 
     public boolean checkIsWinner() {
         for (char letter : correctLetters) {
