@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 public class HandleGuess {
 
-//    private static final int MAX_GUESSES = 10;
+    private static final int MAX_GUESSES = 5;
     private char [] correctLetters;
     private ArrayList<Character> incorrectGuesses;
-    private int incorrectAttempts = 0;
+    private int guessesLeft;
 
     public HandleGuess(String randomWord) {
         if (randomWord == null || randomWord.isEmpty()){
@@ -18,6 +18,7 @@ public class HandleGuess {
         correctLetters = new char[wordLength];
         Arrays.fill(correctLetters, '_');
         incorrectGuesses = new ArrayList<>();
+        guessesLeft = MAX_GUESSES;
     }
 
 //    public  int getMaxGuesses() {
@@ -38,13 +39,15 @@ public class HandleGuess {
         this.incorrectGuesses = incorrectGuesses;
     }
 
-    public int getIncorrectAttempts() {
-        return incorrectAttempts;
+    public int getGuessesLeft() {
+        return guessesLeft;
     }
 
-    public void setIncorrectAttempts(int incorrectAttempts) {
-        this.incorrectAttempts = incorrectAttempts;
-    }
+//    public void setIncorrectAttempts(int incorrectAttempts) {
+//        this.incorrectAttempts = incorrectAttempts;
+//    }
+
+
 
     public boolean checkGuess(String randomWord, char enteredLetter){
         boolean isLetterInWord = false;
@@ -63,7 +66,7 @@ public class HandleGuess {
 
         if (!isLetterInWord) {
             incorrectGuesses.add(enteredLetter);
-            incorrectAttempts++;
+            guessesLeft--;
         }
 
         return isLetterInWord;
@@ -94,7 +97,7 @@ public class HandleGuess {
     }
 
     public boolean checkIsLoser() {
-        return incorrectGuesses.size() == 5;
+        return incorrectGuesses.size() == MAX_GUESSES;
     }
 }
 

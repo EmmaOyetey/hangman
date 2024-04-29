@@ -34,11 +34,12 @@ public class HangmanGame {
             } else if (!isLetterInWord) {
                 CommandLine.displayNoLetterMatch(enteredLetter);
                 CommandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
-                CommandLine.displayNumberGuessesRemaining(handleGuess.getIncorrectAttempts());
+                CommandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
                 CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
             } else {
                 CommandLine.displayLetterMatch(enteredLetter);
                 CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+                CommandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
                 CommandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
             }
         }

@@ -26,8 +26,8 @@ public class CommandLine {
         System.out.println("Nice!, " + enteredLetter + " is in the word");
     }
 
-    public static void displayNumberGuessesRemaining(int incorrectAttempts){
-        System.out.println(" you have " + incorrectAttempts);
+    public static void displayNumberGuessesRemaining(int guessesLeft){
+        System.out.println("You have " + guessesLeft + " guesses remaining");
     }
 
     public static void displayPreviousGuesses(ArrayList<Character> incorrectGuesses) {
