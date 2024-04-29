@@ -25,15 +25,22 @@ public class CommandLine {
     public static void displayLetterMatch(char enteredLetter) {
         System.out.println("Nice!, " + enteredLetter + " is in the word");
     }
-    public static void displayPreviousGuesses(ArrayList<Character> IncorrectGuesses) {
-        System.out.print("Your incorrect guesses so far: ");
-        for (int i = 0; i < IncorrectGuesses.size(); i++) {
-            System.out.print(IncorrectGuesses.get(i));
-            if (i < IncorrectGuesses.size() - 1) {
-                System.out.print(", "); // Add comma and space if not the last guess
+
+    public static void displayNumberGuessesRemaining(int incorrectAttempts){
+        System.out.println(" you have " + incorrectAttempts);
+    }
+
+    public static void displayPreviousGuesses(ArrayList<Character> incorrectGuesses) {
+        if (incorrectGuesses != null && !incorrectGuesses.isEmpty()) {
+            System.out.print("Your incorrect guesses so far: ");
+            for (int i = 0; i < incorrectGuesses.size(); i++) {
+                System.out.print(incorrectGuesses.get(i));
+                if (i < incorrectGuesses.size() - 1) {
+                    System.out.print(", "); // Add comma and space if not the last guess
+                }
             }
+            System.out.println(); // Print newline after all guesses are displayed
         }
-        System.out.println(); // Print newline after all guesses are displayed
     }
 
     public static void displayGuessNotUnique(char enteredLetter){

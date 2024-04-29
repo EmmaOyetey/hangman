@@ -5,21 +5,24 @@ import java.util.ArrayList;
 
 public class HandleGuess {
 
-    private static final int MAX_GUESSES = 10;
+//    private static final int MAX_GUESSES = 10;
     private char [] correctLetters;
     private ArrayList<Character> incorrectGuesses;
     private int incorrectAttempts = 0;
 
     public HandleGuess(String randomWord) {
+        if (randomWord == null || randomWord.isEmpty()){
+            throw new IllegalArgumentException("Random word cannot be null or empty ");
+        }
         int wordLength = Words.getWordLength(randomWord);
         correctLetters = new char[wordLength];
         Arrays.fill(correctLetters, '_');
         incorrectGuesses = new ArrayList<>();
     }
 
-    public  int getMaxGuesses() {
-        return MAX_GUESSES;
-    }
+//    public  int getMaxGuesses() {
+//        return MAX_GUESSES;
+//    }
 
     public char[] getCorrectLetters() {
         return correctLetters;
@@ -35,12 +38,20 @@ public class HandleGuess {
         this.incorrectGuesses = incorrectGuesses;
     }
 
+    public int getIncorrectAttempts() {
+        return incorrectAttempts;
+    }
+
+    public void setIncorrectAttempts(int incorrectAttempts) {
+        this.incorrectAttempts = incorrectAttempts;
+    }
+
     public boolean checkGuess(String randomWord, char enteredLetter){
         boolean isLetterInWord = false;
         boolean isUniqueGuess = checkIsUnique(enteredLetter);
 
         if (!isUniqueGuess) {
-            return false; // If the guess is not unique, return false without further processing
+            return false;
         }
 
         for (int i = 0; i < randomWord.length(); i++) {
@@ -62,16 +73,16 @@ public class HandleGuess {
     public boolean checkIsUnique(char enteredLetter){
         for (char letter : incorrectGuesses) {
             if (letter == enteredLetter) {
-                return false; // Letter is already guessed incorrectly
+                return false;
             }
         }
         for (char letter : correctLetters) {
             if (letter == enteredLetter) {
-                return false; // Letter is already guessed correctly
+                return false;
             }
         }
-        return true; // Letter is not guessed yet
-    };
+        return true;
+    }
 
     public boolean checkIsWinner() {
         for (char letter : correctLetters) {
@@ -79,7 +90,7 @@ public class HandleGuess {
                 return false;
             }
         }
-        return true; // No underscores found, all letters have been guessed
+        return true;
     }
 
     public boolean checkIsLoser() {
