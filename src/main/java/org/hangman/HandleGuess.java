@@ -35,14 +35,6 @@ public class HandleGuess {
         this.incorrectGuesses = incorrectGuesses;
     }
 
-//    public int getIncorrectAttempts() {
-//        return incorrectAttempts;
-//    }
-
-  //  public void setIncorrectAttempts(int incorrectAttempts) {
-   //     this.incorrectAttempts = incorrectAttempts;
- //   }
-
     public boolean checkGuess(String randomWord, char enteredLetter){
         boolean isLetterIsInWord = false;
         for (int i = 0; i < randomWord.length(); i++) {
