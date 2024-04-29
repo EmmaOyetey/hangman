@@ -29,24 +29,35 @@ public class HangmanGame {
                 continue;
             }
             if (isWinner) {
-                CommandLine.displayWinnerMessage();
-                CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+                displayWinnerMessage(handleGuess);
             } else if (!isLetterInWord) {
-                CommandLine.displayNoLetterMatch(enteredLetter);
-                CommandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
-                CommandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
-                CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+                displayNoLetterMatchMessage(enteredLetter, handleGuess);
             } else {
-                CommandLine.displayLetterMatch(enteredLetter);
-                CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
-                CommandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
-                CommandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
+                displayLetterMatchMessage(enteredLetter, handleGuess);
             }
         }
 
         if (isLoser) {
-        CommandLine.displayLoserMessage(randomWord);
+            CommandLine.displayLoserMessage(randomWord);
         }
     }
 
+    private void displayWinnerMessage(HandleGuess handleGuess) {
+        CommandLine.displayWinnerMessage();
+        CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+    }
+
+    private void displayNoLetterMatchMessage(char enteredLetter, HandleGuess handleGuess) {
+        CommandLine.displayNoLetterMatch(enteredLetter);
+        CommandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
+        CommandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
+        CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+    }
+
+    private void displayLetterMatchMessage(char enteredLetter, HandleGuess handleGuess) {
+        CommandLine.displayLetterMatch(enteredLetter);
+        CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+        CommandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
+        CommandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
+    }
 }

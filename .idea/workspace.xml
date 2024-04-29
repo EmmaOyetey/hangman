@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="adjusted code for event no incorrect guesses made">
+    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="adjusted code to show guesses remaining instead of attempts made">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714406628858</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="adjusted code to show guesses remaining instead of attempts made">
+      <option name="closed" value="true" />
+      <created>1714407594402</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1714407594403</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -273,7 +277,8 @@
     <MESSAGE value="pushing to github" />
     <MESSAGE value="adjusted code for event guess was already made." />
     <MESSAGE value="adjusted code for event no incorrect guesses made" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjusted code for event no incorrect guesses made" />
+    <MESSAGE value="adjusted code to show guesses remaining instead of attempts made" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjusted code to show guesses remaining instead of attempts made" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
