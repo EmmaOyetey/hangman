@@ -27,12 +27,12 @@ public class CommandLine {
     }
 
     public static void displayNumberGuessesRemaining(int guessesLeft){
-        System.out.println("You have " + guessesLeft + " guesses remaining");
+        System.out.println("You have " + guessesLeft + " guesses remaining & ");
     }
 
     public static void displayPreviousGuesses(ArrayList<Character> incorrectGuesses) {
         if (incorrectGuesses != null && !incorrectGuesses.isEmpty()) {
-            System.out.print("Your incorrect guesses so far: ");
+            System.out.print("you have already guessed: ");
             for (int i = 0; i < incorrectGuesses.size(); i++) {
                 System.out.print(incorrectGuesses.get(i));
                 if (i < incorrectGuesses.size() - 1) {
@@ -48,7 +48,7 @@ public class CommandLine {
     }
 
     public static void displayNoLetterMatch(char enteredLetter) {
-        System.out.println("Sorry, " + enteredLetter + " is not in the word.");
+        System.out.println("Doh, " + enteredLetter + " is not in the word.");
     }
 
     public static void displayLoserMessage(String randomWord) {

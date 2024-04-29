@@ -50,7 +50,6 @@ public class HangmanImage {
             }
 
         private void display4() {
-                System.out.println("Wrong guess, try again");
                 System.out.println("   ____________");
                 System.out.println("   |");
                 System.out.println("   |");
@@ -63,7 +62,6 @@ public class HangmanImage {
             }
 
         private void display3() {
-                System.out.println("Wrong guess, try again");
                 System.out.println("   ____________");
                 System.out.println("   |          _|_");
                 System.out.println("   |         /   \\");
@@ -76,7 +74,6 @@ public class HangmanImage {
             }
 
         private void display2() {
-                System.out.println("Wrong guess, try again");
                 System.out.println("   ____________");
                 System.out.println("   |          _|_");
                 System.out.println("   |         /   \\");
@@ -89,7 +86,6 @@ public class HangmanImage {
             }
 
         private void display1() {
-                System.out.println("Wrong guess, try again");
                 System.out.println("   ____________");
                 System.out.println("   |          _|_");
                 System.out.println("   |         /   \\");

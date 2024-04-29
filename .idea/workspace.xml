@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="refactored  to use methods from the CommandLine class to handle various prompts and messages during the game; keeping the HangmanGame class focused on game logic while delegating UI-related tasks to the CommandLine class.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanImage.java" afterDir="false" />
+    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="added hangman image to the game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanImage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714415296678</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added hangman image to the game">
+      <option name="closed" value="true" />
+      <created>1714420022612</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1714420022614</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -299,7 +306,8 @@
     <MESSAGE value="adjusted code for event no incorrect guesses made" />
     <MESSAGE value="adjusted code to show guesses remaining instead of attempts made" />
     <MESSAGE value="refactored  to use methods from the CommandLine class to handle various prompts and messages during the game; keeping the HangmanGame class focused on game logic while delegating UI-related tasks to the CommandLine class." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored  to use methods from the CommandLine class to handle various prompts and messages during the game; keeping the HangmanGame class focused on game logic while delegating UI-related tasks to the CommandLine class." />
+    <MESSAGE value="added hangman image to the game" />
+    <option name="LAST_COMMIT_MESSAGE" value="added hangman image to the game" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

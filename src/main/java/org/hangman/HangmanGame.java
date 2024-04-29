@@ -34,11 +34,10 @@ public class HangmanGame {
             if (isWinner) {
                 displayWinnerMessage(handleGuess);
             } else if (!isLetterInWord) {
-                displayNoLetterMatchMessage(enteredLetter, handleGuess);
-                hangmanImage.displayHangman(handleGuess.getGuessesLeft());
+                displayNoLetterMatchMessage(enteredLetter, handleGuess, hangmanImage);
+//                hangmanImage.displayHangman(handleGuess.getGuessesLeft());
             } else {
                 displayLetterMatchMessage(enteredLetter, handleGuess);
-                hangmanImage.displayHangman(handleGuess.getGuessesLeft());
             }
         }
 
@@ -53,8 +52,9 @@ public class HangmanGame {
         CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
     }
 
-    private void displayNoLetterMatchMessage(char enteredLetter, HandleGuess handleGuess) {
+    private void displayNoLetterMatchMessage(char enteredLetter, HandleGuess handleGuess, HangmanImage hangmanImage) {
         CommandLine.displayNoLetterMatch(enteredLetter);
+        hangmanImage.displayHangman(handleGuess.getGuessesLeft());
         CommandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
         CommandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
         CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
