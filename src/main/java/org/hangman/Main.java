@@ -18,13 +18,16 @@ public class Main {
         boolean isWinner = false;
         boolean isLoser = false;
         boolean isGuessUnique = true;
+        boolean isLetterInWord;
+        char enteredLetter;
+
 
         while (!isWinner && !isLoser) {
             CommandLine.displayGuessPrompt(handleGuess.getIncorrectGuesses());
             CaptureGuess captureGuess = new CaptureGuess();
-            char enteredLetter = captureGuess.getGuess();
+            enteredLetter = captureGuess.getGuess();
             isGuessUnique = handleGuess.checkIsUnique(enteredLetter);
-            boolean isLetterInWord = handleGuess.checkGuess(randomWord, enteredLetter);
+            isLetterInWord = handleGuess.checkGuess(randomWord, enteredLetter);
             isWinner = handleGuess.checkIsWinner();
             isLoser = handleGuess.checkIsLoser();
 
