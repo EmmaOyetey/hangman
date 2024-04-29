@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class HandleGuess {
 
-    private static final int MAX_GUESSES = 5;
+    private static final int MAX_GUESSES = 7;
     private char [] correctLetters;
     private ArrayList<Character> incorrectGuesses;
     private int guessesLeft;
@@ -21,9 +21,9 @@ public class HandleGuess {
         guessesLeft = MAX_GUESSES;
     }
 
-//    public  int getMaxGuesses() {
-//        return MAX_GUESSES;
-//    }
+    public  int getMaxGuesses() {
+        return MAX_GUESSES;
+    }
 
     public char[] getCorrectLetters() {
         return correctLetters;

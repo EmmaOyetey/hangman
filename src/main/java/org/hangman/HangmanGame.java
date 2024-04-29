@@ -11,9 +11,12 @@ public class HangmanGame {
     public void play(){
 
         String randomWord = Words.generateRandomWord();
-        CommandLine.displayRandomWord(randomWord); // to remove
+
         CommandLine.displayStartGamePrompt();
         HandleGuess handleGuess = new HandleGuess(randomWord);
+        HangmanImage hangmanImage = new HangmanImage();
+
+
 
         while (!isWinner && !isLoser) {
             CommandLine.displayGuessPrompt(handleGuess.getIncorrectGuesses());
@@ -32,13 +35,16 @@ public class HangmanGame {
                 displayWinnerMessage(handleGuess);
             } else if (!isLetterInWord) {
                 displayNoLetterMatchMessage(enteredLetter, handleGuess);
+                hangmanImage.displayHangman(handleGuess.getGuessesLeft());
             } else {
                 displayLetterMatchMessage(enteredLetter, handleGuess);
+                hangmanImage.displayHangman(handleGuess.getGuessesLeft());
             }
         }
 
         if (isLoser) {
             CommandLine.displayLoserMessage(randomWord);
+            hangmanImage.displayHangman(handleGuess.getGuessesLeft());
         }
     }
 
