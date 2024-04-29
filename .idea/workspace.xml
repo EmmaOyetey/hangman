@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="refactored moving arrays containing correct and incorrect guesses to instance variables of handleGuess. modified code to enusre game is terminated after set number of incorrect guesses rather than all attempts.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="moved output messages from main to the commandline class" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714341396933</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="moved output messages from main to the commandline class">
+      <option name="closed" value="true" />
+      <created>1714393511764</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714393511765</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -206,7 +210,8 @@
     <MESSAGE value="removed position array and replaced with correctLetter array which displays example&quot;_,_,A,_ &quot;" />
     <MESSAGE value="commiting changes before refactoring arrays to be instance variables of handle guess class" />
     <MESSAGE value="refactored moving arrays containing correct and incorrect guesses to instance variables of handleGuess. modified code to enusre game is terminated after set number of incorrect guesses rather than all attempts." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored moving arrays containing correct and incorrect guesses to instance variables of handleGuess. modified code to enusre game is terminated after set number of incorrect guesses rather than all attempts." />
+    <MESSAGE value="moved output messages from main to the commandline class" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved output messages from main to the commandline class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
