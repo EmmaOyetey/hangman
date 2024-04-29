@@ -27,7 +27,7 @@ public class Main {
             isLoser = handleGuess.checkIsLoser();
 
             if (isWinner) {
-                System.out.println("Boom! You've guessed the word.");
+                CommandLine.displayWinnerMessage();
                 CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
             } else if (!isLetterInWord) {
                 CommandLine.displayNoLetterMatch(enteredLetter);
@@ -41,7 +41,7 @@ public class Main {
         }
 
         if (isLoser) {
-            System.out.println("Sorry, you've reached the maximum number of guesses. The word was: " + randomWord);
+            CommandLine.displayLoserMessage(randomWord);
         }
     }
 }

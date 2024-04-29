@@ -14,7 +14,7 @@ public class CommandLine {
 
      public static void displayGuessPrompt( ArrayList<Character> incorrectGuesses)  {
    //      System.out.println("Previous incorrect guesses" + incorrectGuesses);
-         System.out.println("Make your guess:");
+         System.out.println("Guess a letter:");
      }
 
 
@@ -23,10 +23,10 @@ public class CommandLine {
     }
 
     public static void displayLetterMatch(char enteredLetter) {
-        System.out.println("Nice!, " + enteredLetter + "is in the word");
+        System.out.println("Nice!, " + enteredLetter + " is in the word");
     }
     public static void displayPreviousGuesses(ArrayList<Character> IncorrectGuesses) {
-        System.out.print("Your guesses so far: ");
+        System.out.print("Your incorrect guesses so far: ");
         for (int i = 0; i < IncorrectGuesses.size(); i++) {
             System.out.print(IncorrectGuesses.get(i));
             if (i < IncorrectGuesses.size() - 1) {
@@ -40,6 +40,14 @@ public class CommandLine {
 
     public static void displayNoLetterMatch(char enteredLetter) {
         System.out.println("Sorry, " + enteredLetter + " is not in the word.");
+    }
+
+    public static void displayLoserMessage(String randomWord) {
+        System.out.println("Sorry, you've reached the maximum number of guesses. The word was: " + randomWord);
+    }
+
+    public static void displayWinnerMessage() {
+        System.out.println("Boom! You've guessed the word.");
     }
 }
 //    public static void displayLetterMatch(ArrayList<Integer> positions) {
