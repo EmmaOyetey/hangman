@@ -43,11 +43,6 @@ public class HandleGuess {
         return guessesLeft;
     }
 
-//    public void setIncorrectAttempts(int incorrectAttempts) {
-//        this.incorrectAttempts = incorrectAttempts;
-//    }
-
-
 
     public boolean checkGuess(String randomWord, char currentGuess){
         boolean isLetterInWord = false;
