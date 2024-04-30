@@ -6,11 +6,11 @@ public class CommandLine {
 
     public void displayRandomWord(String randomWord) {
     System.out.println("Random word: " + randomWord);
-}
+    }
 
-public void displayCaptureNamePrompt(){
+    public void displayCaptureNamePrompt(){
         System.out.println("Welcome to Hangman. Please enter your name : ");
-}
+    }
     public void displayStartGamePrompt() {
         System.out.println(" Can you guess the word?");
     }
@@ -69,6 +69,9 @@ public void displayCaptureNamePrompt(){
         System.out.println(name + "fancy another game? Enter 'y' for yes and 'n' for no");
     }
 
+    public static void displayGoodbyeMessage(String name) {
+        System.out.println("Thank you for playing " + name + "Bye!");
+    }
 
 }
 

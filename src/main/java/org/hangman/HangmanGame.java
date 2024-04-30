@@ -9,6 +9,7 @@ public class HangmanGame {
     private boolean isGuessUnique;
     private boolean isLetterInWord;
     private char currentGuess;
+    private boolean playAgain;
 
     public HangmanGame(User user) {
         this.user = user;
@@ -18,6 +19,7 @@ public class HangmanGame {
         this.isGuessUnique = true;
         this.isLetterInWord = false;
         this.currentGuess = '\0';
+        this.playAgain = false;
     }
 
     public void play(){
@@ -26,8 +28,10 @@ public class HangmanGame {
         HandleGuess handleGuess = new HandleGuess(randomWord);
         HangmanImage hangmanImage = new HangmanImage();
 
+
         commandLine.displayStartGamePrompt();
         CaptureGuess captureGuess = new CaptureGuess();
+        NewGame newGame = new NewGame();
 
         while (!isWinner && !isLoser) {
             commandLine.displayGuessPrompt(handleGuess.getIncorrectGuesses());
@@ -59,9 +63,8 @@ public class HangmanGame {
             user.incrementGamesLost();
         }
 
-        user.incrementGamesPlayed();
-        CommandLine.displayPlayerPerformance(user.getName(), user.getGamesPlayed(), user.getGamesLost(), user.getGamesWon());
-        CommandLine.displayPlayAgainPrompt(user.getName());
+        handleGameEnd(commandLine, handleGuess, hangmanImage, newGame );
+
     }
 
     private void displayWinnerMessage(HandleGuess handleGuess) {
@@ -85,5 +88,30 @@ public class HangmanGame {
         commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
         commandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
         commandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
+    }
+
+    private void handleGameEnd(CommandLine commandLine, HandleGuess handleGuess, HangmanImage hangmanImage, NewGame newGame) {
+        user.incrementGamesPlayed();
+        CommandLine.displayPlayerPerformance(user.getName(), user.getGamesPlayed(), user.getGamesLost(), user.getGamesWon());
+        CommandLine.displayPlayAgainPrompt(user.getName());
+
+        if (newGame.getPlayAgainChoice()) {
+            resetGame();
+            play();
+        } else {
+            CommandLine.displayGoodbyeMessage(user.getName());
+        }
+    }
+
+    private void resetGame() {
+
+        this.isWinner = false;
+        this.isLoser = false;
+        this.isGuessUnique = true;
+        this.isLetterInWord = false;
+        this.currentGuess = '\0';
+        this.playAgain = false;
+
+
     }
 }
