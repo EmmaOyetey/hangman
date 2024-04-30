@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class CaptureGuess {
 
     private char guess;
+    Scanner scanner = new Scanner(System.in);
 
-    public CaptureGuess() {
-        Scanner scanner = new Scanner(System.in);
+
+    public char getGuess() {
         String input;
         do {
             input = scanner.next();
@@ -18,9 +19,6 @@ public class CaptureGuess {
         } while (input.length() != 1 || !Character.isLetter(input.charAt(0)));
 
         this.guess = input.charAt(0);
-    }
-
-    public char getGuess() {
-        return guess;
+        return this.guess;
     }
 }

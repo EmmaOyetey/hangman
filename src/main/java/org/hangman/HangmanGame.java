@@ -2,6 +2,7 @@ package org.hangman;
 
 public class HangmanGame {
 
+    private final User user;
     private final String randomWord;
     private boolean isWinner;
     private boolean isLoser;
@@ -9,7 +10,8 @@ public class HangmanGame {
     private boolean isLetterInWord;
     private char currentGuess;
 
-    public HangmanGame() {
+    public HangmanGame(User user) {
+        this.user = user;
         this.randomWord = Words.generateRandomWord();
         this.isWinner = false;
         this.isLoser = false;
@@ -25,10 +27,10 @@ public class HangmanGame {
         HangmanImage hangmanImage = new HangmanImage();
 
         commandLine.displayStartGamePrompt();
+        CaptureGuess captureGuess = new CaptureGuess();
 
         while (!isWinner && !isLoser) {
             commandLine.displayGuessPrompt(handleGuess.getIncorrectGuesses());
-            CaptureGuess captureGuess = new CaptureGuess();
             currentGuess = captureGuess.getGuess();
             isGuessUnique = handleGuess.checkIsUnique(currentGuess);
             isLetterInWord = handleGuess.checkGuess(randomWord, currentGuess);
@@ -41,6 +43,8 @@ public class HangmanGame {
             }
             if (isWinner) {
                 displayWinnerMessage(handleGuess);
+                user.incrementGamesWon();
+
             } else if (!isLetterInWord) {
                 displayNoLetterMatchMessage(currentGuess, handleGuess, hangmanImage);
 //                hangmanImage.displayHangman(handleGuess.getGuessesLeft());
@@ -52,7 +56,12 @@ public class HangmanGame {
         if (isLoser) {
             commandLine.displayLoserMessage(randomWord);
             hangmanImage.displayHangman(handleGuess.getGuessesLeft());
+            user.incrementGamesLost();
         }
+
+        user.incrementGamesPlayed();
+        CommandLine.displayPlayerPerformance(user.getName(), user.getGamesPlayed(), user.getGamesLost(), user.getGamesWon());
+        CommandLine.displayPlayAgainPrompt(user.getName());
     }
 
     private void displayWinnerMessage(HandleGuess handleGuess) {

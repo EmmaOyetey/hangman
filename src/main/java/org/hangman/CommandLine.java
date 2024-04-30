@@ -8,8 +8,11 @@ public class CommandLine {
     System.out.println("Random word: " + randomWord);
 }
 
+public void displayCaptureNamePrompt(){
+        System.out.println("Welcome to Hangman. Please enter your name : ");
+}
     public void displayStartGamePrompt() {
-        System.out.println("Welcome to Hangman. Can you guess the word?");
+        System.out.println(" Can you guess the word?");
     }
 
      public void displayGuessPrompt( ArrayList<Character> incorrectGuesses)  {
@@ -30,7 +33,7 @@ public class CommandLine {
     }
 
     public void displayNumberGuessesRemaining(int guessesLeft){
-        System.out.println(" Guesses remaining : " + guessesLeft );
+        System.out.println("Guesses remaining : " + guessesLeft );
     }
 
     public void displayPreviousGuesses(ArrayList<Character> incorrectGuesses) {
@@ -58,9 +61,13 @@ public class CommandLine {
         System.out.println("Boom! You've guessed the word.");
     }
 
+    public static void displayPlayerPerformance(String name, int gamesPlayed, int gamesLost, int gamesWon){
+        System.out.println(name + "You have played " + gamesPlayed + "games of which you have won " + gamesWon + " and lost " + gamesLost );
+    }
 
-
-
+    public static void displayPlayAgainPrompt(String name) {
+        System.out.println(name + "fancy another game? Enter 'y' for yes and 'n' for no");
+    }
 
 
 }
