@@ -3,7 +3,7 @@ package org.hangman;
 public class HangmanGame {
 
     private final User user;
-    private final String randomWord;
+    private String randomWord;
     private boolean isWinner;
     private boolean isLoser;
     private boolean isGuessUnique;
@@ -28,7 +28,6 @@ public class HangmanGame {
         HandleGuess handleGuess = new HandleGuess(randomWord);
         HangmanImage hangmanImage = new HangmanImage();
 
-
         commandLine.displayStartGamePrompt();
         CaptureGuess captureGuess = new CaptureGuess();
         NewGame newGame = new NewGame();
@@ -49,22 +48,17 @@ public class HangmanGame {
                 displayWinnerMessage(handleGuess);
                 user.incrementGamesWon();
 
-            } else if (!isLetterInWord) {
-                displayNoLetterMatchMessage(currentGuess, handleGuess, hangmanImage);
-//                hangmanImage.displayHangman(handleGuess.getGuessesLeft());
             } else {
-                displayLetterMatchMessage(currentGuess, handleGuess);
+                displayFeedback(isLetterInWord, currentGuess, handleGuess, hangmanImage);
             }
         }
 
         if (isLoser) {
             commandLine.displayLoserMessage(randomWord);
-            hangmanImage.displayHangman(handleGuess.getGuessesLeft());
             user.incrementGamesLost();
         }
 
         handleGameEnd(commandLine, handleGuess, hangmanImage, newGame );
-
     }
 
     private void displayWinnerMessage(HandleGuess handleGuess) {
@@ -73,21 +67,17 @@ public class HangmanGame {
         commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
     }
 
-    private void displayNoLetterMatchMessage(char enteredLetter, HandleGuess handleGuess, HangmanImage hangmanImage) {
+    private void displayFeedback(boolean isLetterInWord, char enteredLetter, HandleGuess handleGuess, HangmanImage hangmanImage) {
         CommandLine commandLine = new CommandLine();
-        commandLine.displayNoLetterMatch(enteredLetter);
-        hangmanImage.displayHangman(handleGuess.getGuessesLeft());
+        if (isLetterInWord) {
+            commandLine.displayLetterMatch(enteredLetter);
+        } else {
+            commandLine.displayNoLetterMatch(enteredLetter);
+            hangmanImage.displayHangman(handleGuess.getGuessesLeft());
+        }
         commandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
         commandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
         commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
-    }
-
-    private void displayLetterMatchMessage(char enteredLetter, HandleGuess handleGuess) {
-        CommandLine commandLine = new CommandLine();
-        commandLine.displayLetterMatch(enteredLetter);
-        commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
-        commandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
-        commandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
     }
 
     private void handleGameEnd(CommandLine commandLine, HandleGuess handleGuess, HangmanImage hangmanImage, NewGame newGame) {
@@ -104,14 +94,12 @@ public class HangmanGame {
     }
 
     private void resetGame() {
-
         this.isWinner = false;
         this.isLoser = false;
         this.isGuessUnique = true;
         this.isLetterInWord = false;
         this.currentGuess = '\0';
         this.playAgain = false;
-
-
+        this.randomWord = Words.generateRandomWord();
     }
 }

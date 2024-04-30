@@ -12,7 +12,7 @@ public class CommandLine {
         System.out.println("Welcome to Hangman. Please enter your name : ");
     }
     public void displayStartGamePrompt() {
-        System.out.println(" Can you guess the word?");
+        System.out.println("Can you guess the word?");
     }
 
      public void displayGuessPrompt( ArrayList<Character> incorrectGuesses)  {
@@ -62,11 +62,11 @@ public class CommandLine {
     }
 
     public static void displayPlayerPerformance(String name, int gamesPlayed, int gamesLost, int gamesWon){
-        System.out.println(name + "You have played " + gamesPlayed + "games of which you have won " + gamesWon + " and lost " + gamesLost );
+        System.out.println(name + " You have played " + gamesPlayed + " games of which you have won " + gamesWon + " and lost " + gamesLost );
     }
 
     public static void displayPlayAgainPrompt(String name) {
-        System.out.println(name + "fancy another game? Enter 'y' for yes and 'n' for no");
+        System.out.println(name + " Fancy another game? Enter 'y' for yes and 'n' for no");
     }
 
     public static void displayGoodbyeMessage(String name) {
