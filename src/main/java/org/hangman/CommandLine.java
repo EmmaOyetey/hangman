@@ -4,35 +4,38 @@ import java.util.ArrayList;
 
 public class CommandLine {
 
-    public static void displayRandomWord(String randomWord) {
+    public void displayRandomWord(String randomWord) {
     System.out.println("Random word: " + randomWord);
 }
 
-    public static void displayStartGamePrompt() {
+    public void displayStartGamePrompt() {
         System.out.println("Welcome to Hangman. Can you guess the word?");
     }
 
-     public static void displayGuessPrompt( ArrayList<Character> incorrectGuesses)  {
+     public void displayGuessPrompt( ArrayList<Character> incorrectGuesses)  {
    //      System.out.println("Previous incorrect guesses" + incorrectGuesses);
          System.out.println("Guess a letter:");
      }
 
+    public void displayLetterMatch(char currentGuess) {
+        System.out.println("Nice!, " + currentGuess + " is in the word");
+    }
 
-    public static void displayCorrectLetters(char[] correctedLetters ) {
+    public void displayCorrectLetters(char[] correctedLetters ) {
         System.out.println(correctedLetters);
     }
 
-    public static void displayLetterMatch(char enteredLetter) {
-        System.out.println("Nice!, " + enteredLetter + " is in the word");
+    public void displayNoLetterMatch(char currentGuess) {
+        System.out.println("Sorry, " + currentGuess + " is not in the word.");
     }
 
-    public static void displayNumberGuessesRemaining(int guessesLeft){
-        System.out.println("You have " + guessesLeft + " guesses remaining & ");
+    public void displayNumberGuessesRemaining(int guessesLeft){
+        System.out.println(" Guesses remaining : " + guessesLeft );
     }
 
-    public static void displayPreviousGuesses(ArrayList<Character> incorrectGuesses) {
+    public void displayPreviousGuesses(ArrayList<Character> incorrectGuesses) {
         if (incorrectGuesses != null && !incorrectGuesses.isEmpty()) {
-            System.out.print("you have already guessed: ");
+            System.out.print("Previous Guesses: ");
             for (int i = 0; i < incorrectGuesses.size(); i++) {
                 System.out.print(incorrectGuesses.get(i));
                 if (i < incorrectGuesses.size() - 1) {
@@ -43,19 +46,15 @@ public class CommandLine {
         }
     }
 
-    public static void displayGuessNotUnique(char enteredLetter){
-        System.out.println("You already guessed " + enteredLetter);
+    public void displayGuessNotUnique(char currentGuess){
+        System.out.println("You already guessed " + currentGuess);
     }
 
-    public static void displayNoLetterMatch(char enteredLetter) {
-        System.out.println("Doh, " + enteredLetter + " is not in the word.");
+    public void displayLoserMessage(String randomWord) {
+        System.out.println("Sorry, you loose! The word was: " + randomWord);
     }
 
-    public static void displayLoserMessage(String randomWord) {
-        System.out.println("Sorry, you've reached the maximum number of guesses. The word was: " + randomWord);
-    }
-
-    public static void displayWinnerMessage() {
+    public void displayWinnerMessage() {
         System.out.println("Boom! You've guessed the word.");
     }
 

@@ -2,68 +2,79 @@ package org.hangman;
 
 public class HangmanGame {
 
-    boolean isWinner = false;
-    boolean isLoser = false;
-    boolean isGuessUnique = true;
-    boolean isLetterInWord;
-    char enteredLetter;
+    private final String randomWord;
+    private boolean isWinner;
+    private boolean isLoser;
+    private boolean isGuessUnique;
+    private boolean isLetterInWord;
+    private char currentGuess;
+
+    public HangmanGame() {
+        this.randomWord = Words.generateRandomWord();
+        this.isWinner = false;
+        this.isLoser = false;
+        this.isGuessUnique = true;
+        this.isLetterInWord = false;
+        this.currentGuess = '\0';
+    }
 
     public void play(){
 
-        String randomWord = Words.generateRandomWord();
-
-        CommandLine.displayStartGamePrompt();
+        CommandLine commandLine = new CommandLine();
         HandleGuess handleGuess = new HandleGuess(randomWord);
         HangmanImage hangmanImage = new HangmanImage();
 
-
+        commandLine.displayStartGamePrompt();
 
         while (!isWinner && !isLoser) {
-            CommandLine.displayGuessPrompt(handleGuess.getIncorrectGuesses());
+            commandLine.displayGuessPrompt(handleGuess.getIncorrectGuesses());
             CaptureGuess captureGuess = new CaptureGuess();
-            enteredLetter = captureGuess.getGuess();
-            isGuessUnique = handleGuess.checkIsUnique(enteredLetter);
-            isLetterInWord = handleGuess.checkGuess(randomWord, enteredLetter);
+            currentGuess = captureGuess.getGuess();
+            isGuessUnique = handleGuess.checkIsUnique(currentGuess);
+            isLetterInWord = handleGuess.checkGuess(randomWord, currentGuess);
             isWinner = handleGuess.checkIsWinner();
             isLoser = handleGuess.checkIsLoser();
 
             if (!isGuessUnique) {
-                CommandLine.displayGuessNotUnique(enteredLetter);
+                commandLine.displayGuessNotUnique(currentGuess);
                 continue;
             }
             if (isWinner) {
                 displayWinnerMessage(handleGuess);
             } else if (!isLetterInWord) {
-                displayNoLetterMatchMessage(enteredLetter, handleGuess, hangmanImage);
+                displayNoLetterMatchMessage(currentGuess, handleGuess, hangmanImage);
 //                hangmanImage.displayHangman(handleGuess.getGuessesLeft());
             } else {
-                displayLetterMatchMessage(enteredLetter, handleGuess);
+                displayLetterMatchMessage(currentGuess, handleGuess);
             }
         }
 
         if (isLoser) {
-            CommandLine.displayLoserMessage(randomWord);
+            commandLine.displayLoserMessage(randomWord);
             hangmanImage.displayHangman(handleGuess.getGuessesLeft());
         }
     }
 
     private void displayWinnerMessage(HandleGuess handleGuess) {
-        CommandLine.displayWinnerMessage();
-        CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+        CommandLine commandLine = new CommandLine();
+        commandLine.displayWinnerMessage();
+        commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
     }
 
     private void displayNoLetterMatchMessage(char enteredLetter, HandleGuess handleGuess, HangmanImage hangmanImage) {
-        CommandLine.displayNoLetterMatch(enteredLetter);
+        CommandLine commandLine = new CommandLine();
+        commandLine.displayNoLetterMatch(enteredLetter);
         hangmanImage.displayHangman(handleGuess.getGuessesLeft());
-        CommandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
-        CommandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
-        CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+        commandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
+        commandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
+        commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
     }
 
     private void displayLetterMatchMessage(char enteredLetter, HandleGuess handleGuess) {
-        CommandLine.displayLetterMatch(enteredLetter);
-        CommandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
-        CommandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
-        CommandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
+        CommandLine commandLine = new CommandLine();
+        commandLine.displayLetterMatch(enteredLetter);
+        commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+        commandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
+        commandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
     }
 }

@@ -49,23 +49,23 @@ public class HandleGuess {
 
 
 
-    public boolean checkGuess(String randomWord, char enteredLetter){
+    public boolean checkGuess(String randomWord, char currentGuess){
         boolean isLetterInWord = false;
-        boolean isUniqueGuess = checkIsUnique(enteredLetter);
+        boolean isUniqueGuess = checkIsUnique(currentGuess);
 
         if (!isUniqueGuess) {
             return false;
         }
 
         for (int i = 0; i < randomWord.length(); i++) {
-            if (randomWord.charAt(i) == enteredLetter) {
+            if (randomWord.charAt(i) == currentGuess) {
                 isLetterInWord = true;
-                correctLetters[i] = enteredLetter;
+                correctLetters[i] = currentGuess;
             }
         }
 
         if (!isLetterInWord) {
-            incorrectGuesses.add(enteredLetter);
+            incorrectGuesses.add(currentGuess);
             guessesLeft--;
         }
 
@@ -73,14 +73,14 @@ public class HandleGuess {
     }
 
 
-    public boolean checkIsUnique(char enteredLetter){
+    public boolean checkIsUnique(char currentGuess){
         for (char letter : incorrectGuesses) {
-            if (letter == enteredLetter) {
+            if (letter == currentGuess) {
                 return false;
             }
         }
         for (char letter : correctLetters) {
-            if (letter == enteredLetter) {
+            if (letter == currentGuess) {
                 return false;
             }
         }
