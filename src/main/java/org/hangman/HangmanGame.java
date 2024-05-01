@@ -9,7 +9,7 @@ public class HangmanGame {
     private boolean isGuessUnique;
     private boolean isLetterInWord;
     private char currentGuess;
-    private boolean playAgain;
+
 
     public HangmanGame(User user) {
         this.user = user;
@@ -19,21 +19,21 @@ public class HangmanGame {
         this.isGuessUnique = true;
         this.isLetterInWord = false;
         this.currentGuess = '\0';
-        this.playAgain = false;
+
     }
 
-    public void play(){
+    public void play() {
 
         CommandLine commandLine = new CommandLine();
         HandleGuess handleGuess = new HandleGuess(randomWord);
         HangmanImage hangmanImage = new HangmanImage();
 
-        commandLine.displayStartGamePrompt();
+        commandLine.displayStartGamePrompt(user.getName(), handleGuess.getCorrectLetters());
         CaptureGuess captureGuess = new CaptureGuess();
         NewGame newGame = new NewGame();
 
         while (!isWinner && !isLoser) {
-            commandLine.displayGuessPrompt(handleGuess.getIncorrectGuesses());
+            commandLine.displayGuessPrompt();
             currentGuess = captureGuess.getGuess();
             isGuessUnique = handleGuess.checkIsUnique(currentGuess);
             isLetterInWord = handleGuess.checkGuess(randomWord, currentGuess);
@@ -44,41 +44,33 @@ public class HangmanGame {
                 commandLine.displayGuessNotUnique(currentGuess);
                 continue;
             }
-            if (isWinner) {
-                displayWinnerMessage(handleGuess);
-                user.incrementGamesWon();
 
+            if (isWinner) {
+                commandLine.displayWinnerMessage();
+                commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+                user.incrementGamesWon();
             } else {
-                displayFeedback(isLetterInWord, currentGuess, handleGuess, hangmanImage);
+                if (isLoser) {
+                    commandLine.displayLoserMessage(randomWord);
+                    user.incrementGamesLost();
+                } else {
+                    if (isLetterInWord) {
+                        commandLine.displayLetterMatch(currentGuess);
+                    } else {
+                        commandLine.displayNoLetterMatch(currentGuess);
+                        hangmanImage.displayHangman(handleGuess.getGuessesLeft());
+                    }
+                    commandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
+                    commandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
+                    commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
+                }
             }
         }
 
-        if (isLoser) {
-            commandLine.displayLoserMessage(randomWord);
-            user.incrementGamesLost();
-        }
-
-        handleGameEnd(commandLine, handleGuess, hangmanImage, newGame );
+        handleGameEnd(commandLine, handleGuess, hangmanImage, newGame);
     }
 
-    private void displayWinnerMessage(HandleGuess handleGuess) {
-        CommandLine commandLine = new CommandLine();
-        commandLine.displayWinnerMessage();
-        commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
-    }
 
-    private void displayFeedback(boolean isLetterInWord, char enteredLetter, HandleGuess handleGuess, HangmanImage hangmanImage) {
-        CommandLine commandLine = new CommandLine();
-        if (isLetterInWord) {
-            commandLine.displayLetterMatch(enteredLetter);
-        } else {
-            commandLine.displayNoLetterMatch(enteredLetter);
-            hangmanImage.displayHangman(handleGuess.getGuessesLeft());
-        }
-        commandLine.displayPreviousGuesses(handleGuess.getIncorrectGuesses());
-        commandLine.displayNumberGuessesRemaining(handleGuess.getGuessesLeft());
-        commandLine.displayCorrectLetters(handleGuess.getCorrectLetters());
-    }
 
     private void handleGameEnd(CommandLine commandLine, HandleGuess handleGuess, HangmanImage hangmanImage, NewGame newGame) {
         user.incrementGamesPlayed();
@@ -99,7 +91,6 @@ public class HangmanGame {
         this.isGuessUnique = true;
         this.isLetterInWord = false;
         this.currentGuess = '\0';
-        this.playAgain = false;
         this.randomWord = Words.generateRandomWord();
     }
 }

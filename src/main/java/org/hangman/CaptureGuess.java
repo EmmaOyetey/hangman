@@ -7,7 +7,6 @@ public class CaptureGuess {
     private char guess;
     Scanner scanner = new Scanner(System.in);
 
-
     public char getGuess() {
         String input;
         do {

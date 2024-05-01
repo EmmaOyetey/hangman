@@ -3,9 +3,7 @@ import java.util.Scanner;
 
 public class NewGame {
 
-    private char choice;
     Scanner scanner = new Scanner(System.in);
-
 
     public boolean getPlayAgainChoice() {
 

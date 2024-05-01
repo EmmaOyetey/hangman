@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class CommandLine {
 
-    public void displayRandomWord(String randomWord) {
-    System.out.println("Random word: " + randomWord);
-    }
+  //  public void displayRandomWord(String randomWord) {
+  //  System.out.println("Random word: " + randomWord);
+  //  }
 
     public void displayCaptureNamePrompt(){
         System.out.println("Welcome to Hangman. Please enter your name : ");
     }
-    public void displayStartGamePrompt() {
-        System.out.println("Can you guess the word?");
+    public void displayStartGamePrompt(String name,char[] correctLetters ) {
+        System.out.println("Hi "+ name + " Can you guess the word?");
+        System.out.println(correctLetters);
     }
 
-     public void displayGuessPrompt( ArrayList<Character> incorrectGuesses)  {
-   //      System.out.println("Previous incorrect guesses" + incorrectGuesses);
-         System.out.println("Guess a letter:");
+    public void displayGuessPrompt()  {
+        System.out.println("Guess a letter:");
      }
 
     public void displayLetterMatch(char currentGuess) {

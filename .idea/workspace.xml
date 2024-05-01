@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="trimmed code relating to displaying feedback">
+    <list default="true" id="e181d19c-db84-405f-8edc-0272a84f727e" name="Changes" comment="removing comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CaptureGuess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/CommandLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/HangmanImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hangman/NewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hangman/NewGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714504961031</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="removing comments">
+      <option name="closed" value="true" />
+      <created>1714510437376</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1714510437376</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -360,7 +373,8 @@
     <MESSAGE value="added user class to keep track of user game and number of games played, won and lost" />
     <MESSAGE value="added NewGame class to handle instance of new game" />
     <MESSAGE value="trimmed code relating to displaying feedback" />
-    <option name="LAST_COMMIT_MESSAGE" value="trimmed code relating to displaying feedback" />
+    <MESSAGE value="removing comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -369,11 +383,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/hangman/Main.java</url>
           <line>12</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/hangman/HandleGuess.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

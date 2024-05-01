@@ -2,7 +2,6 @@ package org.hangman;
 
 public class HangmanImage {
 
-
         public void displayHangman(int guessesLeft ) {
             switch (guessesLeft) {
                 case 6:
