@@ -1,7 +1,7 @@
 # Hangman Java Game
 
 ## Overview
-Welcome to the Hangman Java Game! This command-line version of the classic Hangman game, implemented uses object-oriented principles in Java, to build a fully functional Hangman game, complete with scorekeeping and a command-line interface.. The game includes features like score tracking, a variety of words to guess, and a visual representation of the hangman. Switch to master to view code.
+Welcome to the Hangman Java Game! This command-line version of the classic Hangman game, implemented uses object-oriented principles in Java, to build a fully functional Hangman game, complete with scorekeeping and a command-line interface.. The game includes features like score tracking, a variety of words to guess, and a visual representation of the hangman. **Switch to master to view code.**
 
 ## Features
 Interactive Gameplay: Players can guess letters of a randomly selected word.
