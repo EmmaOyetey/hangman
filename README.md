@@ -1,7 +1,7 @@
 # Hangman Java Game
 
 ## Overview
-Welcome to the Hangman Java game! This project demonstrates confident use of Object-Oriented Programming (OOP) principles to build a fully functional Hangman game, complete with scorekeeping and a command-line interface.
+Welcome to the Hangman Java Game! This command-line version of the classic Hangman game, implemented uses object-oriented principles in Java, to build a fully functional Hangman game, complete with scorekeeping and a command-line interface.. The game includes features like score tracking, a variety of words to guess, and a visual representation of the hangman.
 
 ## Features
 Interactive Gameplay: Players can guess letters of a randomly selected word.
@@ -9,6 +9,14 @@ Scorekeeping: Tracks games played, won, and lost for each user.
 Command-Line Interface: Provides prompts and feedback throughout the game.
 Visual Representation: Displays the Hangman image as the game progresses.
 Play Again Option: Allows users to start a new game without restarting the application.
+
+## How to Play
+Run the game.
+Enter your name when prompted.
+Guess letters to try to uncover the hidden word.
+The game will provide feedback on your guesses and display the current state of the hangman.
+The game ends when you either guess the word correctly or run out of guesses.
+You can choose to play again after each game.
 
 ## Key Classes and Responsibilities
 **Main:** Entry point of the application.Initializes the user and starts the game.                       
@@ -21,9 +29,74 @@ Play Again Option: Allows users to start a new game without restarting the appli
 **Words:** Provides a random word for the game. Maintains a list of possible words and selects one randomly.                                    
 
 ## Demonstration of OOP Principles
-**Encapsulation:** Each class has a well-defined responsibility and maintains its own state.                               
-**Abstraction:** Complex functionalities are abstracted into methods and classes.                                      
-**Inheritance:** Not explicitly used in this project but the principles of code reuse and organization are followed.                           
+**Encapsulation:** Each class has a well-defined responsibility and maintains its own state.                            
+Encapsulation involves bundling the data (fields) and the methods (functions) that operate on the data into a single unit or class, and restricting access to some of the object's components.    
+Example :  the User class encapsulates the user's data and provides public methods to access and modify this data. The internal state (fields) is kept private to prevent unauthorized access and modification.
+**Abstraction:** Complex functionalities are abstracted into methods and classes. 
+Abstraction involves hiding the complex implementation details and showing only the necessary features of an object.
+Example: The HandleGuess class abstracts the complexity of managing guesses, checking if a guess is correct, and tracking the game state. The user of this class does not need to know the internal implementation details.
+**Inheritance:** Not explicitly used in this project but the principles of code reuse and organization are followed. 
+Example: Abstract User Class (Potential Enhancement.)If this game were expanded, inheritance could be used to create a hierarchy of classes. For example, an abstract User class could be extended for different types of users or players.
+
+          package org.hangman;
+          
+          public abstract class User {
+              private String name;
+          
+              public User(String name) {
+                  this.name = name;
+              }
+          
+              public String getName() {
+                  return name;
+              }
+          
+              public abstract void incrementGamesPlayed();
+              public abstract void incrementGamesWon();
+              public abstract void incrementGamesLost();
+          }
+          
+          class SinglePlayer extends User {
+              private int gamesPlayed;
+              private int gamesWon;
+              private int gamesLost;
+          
+              public SinglePlayer(String name) {
+                  super(name);
+                  this.gamesPlayed = 0;
+                  this.gamesWon = 0;
+                  this.gamesLost = 0;
+              }
+          
+              @Override
+              public void incrementGamesPlayed() {
+                  this.gamesPlayed++;
+              }
+          
+              @Override
+              public void incrementGamesWon() {
+                  this.gamesWon++;
+              }
+          
+              @Override
+              public void incrementGamesLost() {
+                  this.gamesLost++;
+              }
+          
+              public int getGamesPlayed() {
+                  return gamesPlayed;
+              }
+          
+              public int getGamesWon() {
+                  return gamesWon;
+              }
+          
+              public int getGamesLost() {
+                  return gamesLost;
+              }
+          }
+In this example, an abstract User class is used to define a common interface for all user types. The SinglePlayer class extends the User class and provides specific implementations for its methods.
+
 **Polymorphism:** Utilized through method overriding and interfaces where necessary (e.g., different display methods in HangmanImage).                             
 
 ## How to Play
@@ -37,16 +110,17 @@ Games Played: Incremented after each game.
 Games Won: Incremented when the player guesses the word correctly.
 Games Lost: Incremented when the player runs out of guesses.
 
-## Code Quality and Improvements
-**Static Constants:** Used for maximum guesses, ensuring easy adjustments and clear code.                                                                                  
+## Code Quality
+**Static Constants:** Used for maximum guesses, ensuring easy adjustments and clear code.  Use of static final variables for constants ensures that values remain unchanged throughout the game.                     
 **Control Flow:** Utilizes loops and conditional statements effectively, with minimal nesting to improve readability.                                                             
 **Separation of Concerns:** Clear separation between different functionalities, making the code easier to maintain and extend.                                               
 
 ## Next Steps and Enhancements
 **Case Insensitivity:** Handle both uppercase and lowercase letter inputs as correct guesses.                                 
 **Branch Management:** Merge master into main or set master as the default branch for better codebase visibility.                         
-**Code Refactoring:** Simplify the control flow in the play() method to reduce complexity and improve maintainability.                           
-**Additional Words:** Expand the list of possible words for more variety in gameplay.                        
-**Graphical Interface:** Consider implementing a GUI for a more interactive user experience.                               
-
+**Code Refactoring:** Simplify the control flow in the play() method to reduce complexity and improve maintainability; reduce nesting and improve readability                                        
+**Graphical Interface:** Consider implementing a GUI for a more interactive user experience. 
+**Abstract User Class:** Consider making the User class abstract and enable multiple players to extend it for a multiplayer game.
+**Additional Words:** Expand the list of possible words for more variety in gameplay.   
+                             
 Thank you for trying out the Hangman game! Enjoy playing and improving your guessing skills!
